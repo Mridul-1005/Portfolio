@@ -1,0 +1,149 @@
+.experience {
+  background: var(--secondary);
+}
+
+.timeline {
+  position: relative;
+  max-width: 800px;
+  margin: 0 auto;
+
+  &::before {
+    content: '';
+    position: absolute;
+    left: 20px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: var(--border);
+  }
+}
+
+.timeline-item {
+  position: relative;
+  padding-left: 60px;
+  padding-bottom: 40px;
+
+  &:last-child {
+    padding-bottom: 0;
+  }
+
+  .timeline-marker {
+    position: absolute;
+    left: 12px;
+    top: 0;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: var(--accent);
+    border: 3px solid var(--secondary);
+    z-index: 1;
+  }
+
+  &.current .timeline-marker {
+    animation: pulse 2s infinite;
+  }
+}
+
+.timeline-content {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 15px;
+  padding: 30px;
+  transition: all 0.3s ease;
+
+  &:hover {
+    transform: translateX(10px);
+    border-color: var(--accent);
+    box-shadow: 0 10px 30px var(--shadow);
+  }
+}
+
+.exp-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 20px;
+
+  .exp-title {
+    font-size: 1.3rem;
+    color: var(--text-primary);
+    font-weight: 600;
+    margin-bottom: 5px;
+  }
+
+  .exp-company {
+    font-size: 1.1rem;
+    color: var(--accent);
+    margin-bottom: 5px;
+  }
+
+  .exp-period {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+  }
+
+  .current-badge {
+    padding: 5px 15px;
+    background: var(--accent);
+    color: var(--primary);
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+  }
+}
+
+.exp-description {
+  color: var(--text-secondary);
+  line-height: 1.8;
+  margin-bottom: 20px;
+}
+
+.exp-tech {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+
+  .tech-tag {
+    padding: 6px 14px;
+    background: var(--secondary);
+    border-radius: 20px;
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    border: 1px solid var(--border);
+  }
+}
+
+@media (max-width: 768px) {
+  .timeline {
+    &::before {
+      left: 15px;
+    }
+  }
+
+  .timeline-item {
+    padding-left: 50px;
+
+    .timeline-marker {
+      left: 7px;
+      width: 16px;
+      height: 16px;
+    }
+  }
+
+  .timeline-content {
+    padding: 20px;
+  }
+
+  .exp-header {
+    flex-direction: column;
+    gap: 10px;
+
+    .current-badge {
+      align-self: flex-start;
+    }
+  }
+
+  .exp-description {
+    font-size: 0.95rem;
+  }
+}

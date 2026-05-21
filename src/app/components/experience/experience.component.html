@@ -1,0 +1,31 @@
+<section id="experience" class="experience">
+  <div class="container">
+    <h2 class="section-title">Work <span>Experience</span></h2>
+
+    <div class="timeline">
+      @for (exp of experiences; track exp.company) {
+        <div class="timeline-item" [class.current]="exp.type === 'current'">
+          <div class="timeline-marker"></div>
+          <div class="timeline-content">
+            <div class="exp-header">
+              <div class="exp-info">
+                <h3 class="exp-title">{{ exp.title }}</h3>
+                <p class="exp-company">{{ exp.company }}</p>
+                <span class="exp-period">{{ exp.period }}</span>
+              </div>
+              @if (exp.type === 'current') {
+                <span class="current-badge">Current</span>
+              }
+            </div>
+            <p class="exp-description">{{ exp.description }}</p>
+            <div class="exp-tech">
+              @for (tech of exp.technologies; track tech) {
+                <span class="tech-tag">{{ tech }}</span>
+              }
+            </div>
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+</section>

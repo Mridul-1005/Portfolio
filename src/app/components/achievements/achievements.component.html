@@ -1,0 +1,44 @@
+<section id="achievements" class="achievements">
+  <div class="container">
+    <h2 class="section-title">Achievements & <span>Certifications</span></h2>
+
+    <div class="achievements-content">
+      <div class="problem-solving">
+        <div class="ps-card">
+          <div class="ps-icon">🏆</div>
+          <div class="ps-stats">
+            <span class="ps-number">700+</span>
+            <span class="ps-label">Problems Solved</span>
+          </div>
+        </div>
+        <div class="platforms">
+          <h3 class="platforms-title">Practice Platforms</h3>
+          <div class="platform-tags">
+            @for (platform of platforms; track platform.name) {
+              <a class="platform-tag" href="{{ platform.link }}" target="_blank" rel="noopener noreferrer">{{ platform.name }}</a>
+            }
+          </div>
+        </div>
+      </div>
+
+      <div class="certifications">
+        <h3 class="cert-title">Certifications</h3>
+        <div class="cert-grid">
+          @for (cert of certifications; track cert.name) {
+            <div class="cert-card">
+              <div class="cert-icon">🏅</div>
+              <div class="cert-content">
+                <h4 class="cert-name">{{ cert.name }}</h4>
+                <p class="cert-issuer">{{ cert.issuer }}</p>
+                <p class="cert-desc">{{ cert.description }}</p>
+                <a class="cert-link" [href]="cert.downloadUrl" target="_blank" rel="noopener noreferrer">
+                  View Certificate
+                </a>
+              </div>
+            </div>
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
