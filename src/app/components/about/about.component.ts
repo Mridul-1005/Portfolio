@@ -13,7 +13,7 @@ export class AboutComponent {
     {
       degree: 'B.Sc. in Software Engineering',
       institution: 'Shahjalal University of Science and Technology, Sylhet',
-      period: 'March 2022 – December 2025',
+      period: 'March 2022 – May 2026',
       grade: 'CGPA: 3.52 / 4.00',
       icon: '🎓'
     },
