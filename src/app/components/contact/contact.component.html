@@ -22,7 +22,9 @@
       </div>
 
       <div class="contact-form-wrapper">
-        <form class="contact-form" (ngSubmit)="onSubmit()">
+        <form class="contact-form" (ngSubmit)="onSubmit()" #contactForm="ngForm">
+          <!-- honeypot field to deter bots -->
+          <input type="text" name="website" [(ngModel)]="formData.website" style="display:none" tabindex="-1" autocomplete="off" />
           <div class="form-group">
             <label for="name">Name</label>
             <input
@@ -59,8 +61,14 @@
             ></textarea>
           </div>
 
-          <button type="submit" class="btn btn-primary">
-            Send Message
+          <div class="form-status">
+            <div *ngIf="loading" class="status loading">Sending...</div>
+            <div *ngIf="success" class="status success">Message sent — thank you!</div>
+            <div *ngIf="error" class="status error">{{ error }}</div>
+          </div>
+
+          <button type="submit" class="btn btn-primary" [disabled]="loading || contactForm.invalid">
+            {{ loading ? 'Sending...' : 'Send Message' }}
           </button>
         </form>
       </div>
