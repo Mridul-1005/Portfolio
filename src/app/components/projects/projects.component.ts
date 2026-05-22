@@ -38,5 +38,13 @@ export class ProjectsComponent {
       github: 'https://github.com/nafi-ullah/Racing-Game',
       icon: '🏎️'
     }
+    ,
+    {
+      name: 'Hate Speech Detection ML Project',
+      description: 'Flask-based machine learning application for real-time hate-speech detection using an SGD classifier with TF-IDF vectorization. The backend exposes a REST API built with Flask, featuring modular utilities for preprocessing, model loading, and prediction. The frontend is developed using Next.js with a clean, responsive interface for user input and instant classification feedback, ensuring a well-structured and maintainable full-stack ML deployment.',
+      tech: ['Python', 'Flask', 'scikit-learn', 'NumPy', 'pandas', 'Next.js', 'Tailwind CSS'],
+      github: 'https://github.com/Gmanrejuan/ML_Project',
+      icon: '🧠'
+    }
   ];
 }
